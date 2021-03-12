@@ -18,7 +18,10 @@ const Hamburger = ({ open, setOpen, isSticky }) => {
 };
 
 export default Hamburger;
-const BurgerContainer = styled.div``;
+const BurgerContainer = styled.div`
+  position: relative;
+  right: 13px;
+`;
 const StyledBurger = styled.button`
   display: flex;
   flex-direction: column;

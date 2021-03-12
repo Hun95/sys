@@ -53,9 +53,9 @@ const StyledMenu = styled.nav`
   right: 0;
 
   transition: transform 0.3s ease-in-out;
-
+  overflow-x: hidden;
   @media (max-width: 576px) {
-    width: 100%;
+    width: 70%;
   }
   img {
     width: 100%;

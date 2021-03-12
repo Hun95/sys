@@ -13,7 +13,7 @@ const Project = () => {
         first='프로젝트'
         second='다양한'
         third='것들을 경험하세요.'
-        img='/dd.jpg'
+        img='/truck.jpg'
         theme='project'
       />
 

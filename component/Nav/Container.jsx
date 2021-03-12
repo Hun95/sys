@@ -29,7 +29,7 @@ const Header = styled.nav`
   height: 70px;
 
   width: 100%;
-
+  overflow-y: ${({ open }) => (open ? 'hidden' : 'visible')};
   position: sticky;
   top: 0;
   background: ${({ sticky }) =>

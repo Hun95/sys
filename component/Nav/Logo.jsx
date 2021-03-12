@@ -11,7 +11,7 @@ const Logo = ({ sticky }) => {
         <Link href='/'>
           <a>
             <img src='/mus.png' className='class' alt='logo' />
-            수염난친구들
+            <p>수염난친구들</p>
           </a>
         </Link>
       </h1>
@@ -29,17 +29,18 @@ const Container = styled.div`
     ${breakDown.tablet({ width: '40px' })}
     ${breakDown.phone({ width: '30px', marginTop: 0 })}
   }
-  span {
+  p {
     color: ${({ sticky }) => (sticky ? 'black' : 'white')};
     margin-left: 15px;
     position: relative;
-    bottom: 5px;
+
     ${breakDown.phone({ marginLeft: '10px' })}
   }
 
-  h1 {
+  a {
+    display: flex;
     margin: 0;
-    margin-left: 3rem;
+    margin-left: 2rem;
     margin-top: 0.75rem;
 
     font-size: 17px;

@@ -22,7 +22,7 @@ const Price = () => {
         first='가격정책'
         second='저렴하게'
         third='꼭 필요한 기능만 추가하세요.'
-        img='/dd.jpg'
+        img='/kkaci.jpg'
         theme='price'
       />
       <Background>
