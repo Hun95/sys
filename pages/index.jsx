@@ -14,6 +14,10 @@ export default function Home() {
       <Head>
         <title>수염난친구들 :메인</title>
         <link rel='icon' href='/favicon.ico' />
+        <meta
+          name='naver-site-verification'
+          content='9d49a02a757cc3134f21a2242219cb37d0471427'
+        />
       </Head>
       <Layout>
         <VideoHero />
