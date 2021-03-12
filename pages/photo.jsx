@@ -3,6 +3,7 @@ import Layout from '../component/Layout';
 import PageHeader from '../component/PageHeader/Container';
 import PhotoCont from '../container/Photo';
 import Head from 'next/head';
+import { ImageProvider } from '../context/ImageContext';
 const Photo = () => {
   return (
     <>
@@ -10,9 +11,11 @@ const Photo = () => {
         <title>수염난친구들 : 사진</title>
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      <Layout>
-        <PhotoCont />
-      </Layout>
+      <ImageProvider>
+        <Layout>
+          <PhotoCont />
+        </Layout>
+      </ImageProvider>
     </>
   );
 };

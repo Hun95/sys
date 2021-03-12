@@ -11,36 +11,22 @@ const ImageProvider = ({ children }) => {
   const [third, setThird] = useState([]);
 
   const url = '/data/photo.json';
-  const putData = () => {
-    data.map((datas) => {
-      const { id } = datas;
-
-      if (id % 3 === 0) {
-        setFirst([...first, datas]);
-      } else if (id % 3 === 1) {
-        setSecond([...second, datas]);
-      } else if (id % 3 === 2) {
-        setThird([...third, datas]);
-      }
-    });
-  };
   const fetchData = async () => {
-    setLoading(true);
     try {
       const res = await fetch(url);
 
       const resData = await res.json();
-      setData(resData);
-      putData();
+      setFirst(resData.filter((datas) => datas.id % 3 === 0));
+      setSecond(resData.filter((datas) => datas.id % 3 === 1));
+      setThird(resData.filter((datas) => datas.id % 3 === 2));
     } catch (err) {
       console.log(err);
     }
-    setLoading(false);
   };
 
   useEffect(() => {
     fetchData();
-    console.log(loading);
+    console.log(first);
   }, []);
 
   return (
@@ -52,6 +38,7 @@ const ImageProvider = ({ children }) => {
         first,
         second,
         third,
+        setFirst,
       }}
     >
       {children}

@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { BiDownload } from 'react-icons/bi';
-
+import { breakDown } from '../../global/Theme';
 const Image = ({ company, url }) => {
   const [visible, setVisible] = useState(false);
 
@@ -13,22 +13,20 @@ const Image = ({ company, url }) => {
   };
 
   return (
-    <Container>
-      <ImageContainer
-        onMouseOver={handleMouseOver}
-        onMouseLeave={handleMouseLeave}
-      >
-        <ImageBox src={url} />
-        {visible && (
-          <TitleBox>
-            <Company>{company}</Company>
-            <a href={url} download>
-              <Download />
-            </a>
-          </TitleBox>
-        )}
-      </ImageContainer>
-    </Container>
+    <ImageContainer
+      onMouseOver={handleMouseOver}
+      onMouseLeave={handleMouseLeave}
+    >
+      <ImageBox src={url} />
+      {visible && (
+        <TitleBox>
+          <Company>{company}</Company>
+          <a href={url} download>
+            <Download />
+          </a>
+        </TitleBox>
+      )}
+    </ImageContainer>
   );
 };
 
@@ -60,13 +58,20 @@ const Company = styled.h1`
     color: red;
   }
 `;
-const ImageContainer = styled.figure`
+const ImageContainer = styled.div`
+  img {
+  }
   width: 400px;
   height: auto;
+  ${breakDown.desktop({ width: '300px', marginTop: 0 })}
   &:hover {
     img {
       filter: brightness(80%);
     }
+  }
+
+  &:not(:first-child) {
+    margin-top: 30px;
   }
 `;
 const Container = styled.section`
