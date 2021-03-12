@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PageHeader from '../../component/PageHeader/Container';
-import Image from '../../component/ImageBox/ImageBox';
+import ImageBox from '../../component/ImageBox/ImageBox';
+import { useImageContext } from '../../context/ImageContext';
 import styled from 'styled-components';
 const index = () => {
+  const { data, first, second, third } = useImageContext();
+
   return (
     <ImageContainer>
       <PageHeader
@@ -13,25 +16,37 @@ const index = () => {
       />
       <TopGridContainer>
         <SecondGridContainer>
-          <Image url='/tower.webp' />
-          <Image />
-          <Image />
-          <Image />
-          <Image />
+          {first.map((datas) => {
+            return (
+              <ImageBox
+                key={datas.id}
+                company={datas.company}
+                url={datas.url}
+              />
+            );
+          })}
         </SecondGridContainer>
         <SecondGridContainer>
-          <Image />
-          <Image url='/tower.webp' />
-          <Image />
-          <Image />
-          <Image />
+          {second.map((datas) => {
+            return (
+              <ImageBox
+                key={datas.id}
+                company={datas.company}
+                url={datas.url}
+              />
+            );
+          })}
         </SecondGridContainer>
         <SecondGridContainer>
-          <Image url='/tower.webp' />
-          <Image />
-          <Image />
-          <Image />
-          <Image />
+          {third.map((datas) => {
+            return (
+              <ImageBox
+                key={datas.id}
+                company={datas.company}
+                url={datas.url}
+              />
+            );
+          })}
         </SecondGridContainer>
       </TopGridContainer>
     </ImageContainer>

@@ -1,23 +1,20 @@
 import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { BiDownload } from 'react-icons/bi';
-import Button from '../Button/Button';
+
 const Image = ({ company, url }) => {
   const [visible, setVisible] = useState(false);
-  const ref = useRef();
+
   const handleMouseOver = () => {
     setVisible(true);
   };
   const handleMouseLeave = () => {
     setVisible(false);
   };
-  useEffect(() => {
-    console.log(ref.current.getBoundingClientRect());
-  }, []);
+
   return (
     <Container>
       <ImageContainer
-        ref={ref}
         onMouseOver={handleMouseOver}
         onMouseLeave={handleMouseLeave}
       >

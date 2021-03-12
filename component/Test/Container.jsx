@@ -34,7 +34,7 @@ const Container = () => {
   //   const observer = new IntersectionObserver(handleScroll, {
   //     root: null,
   //   });
-  //   console.log(observer);
+  //   (observer);
   //   observer.observe(ref.current);
 
   //   return () => {

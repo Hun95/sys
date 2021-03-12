@@ -3,6 +3,7 @@ import { Global } from '../global/Global';
 import { AppProvider } from '../context/context';
 import { PriceProvider } from '../context/PriceContext';
 import { ProjectProvider } from '../context/ProjectContext';
+import { ImageProvider } from '../context/ImageContext';
 function MyApp({ Component, pageProps }) {
   return (
     <>
@@ -10,7 +11,9 @@ function MyApp({ Component, pageProps }) {
       <AppProvider>
         <PriceProvider>
           <ProjectProvider>
-            <Component {...pageProps} />
+            <ImageProvider>
+              <Component {...pageProps} />
+            </ImageProvider>
           </ProjectProvider>
         </PriceProvider>
       </AppProvider>

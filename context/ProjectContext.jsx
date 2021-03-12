@@ -9,7 +9,7 @@ const ProjectProvider = ({ children }) => {
   const [newMenu, setNewMenu] = useState(category);
   const [open, setOpen] = useState(false);
   const [cate, setCate] = useState('all');
-  console.log(cate);
+
   const handleChange = (event) => {
     const value = menu.find((cate) => cate.category === event.target.value);
 
