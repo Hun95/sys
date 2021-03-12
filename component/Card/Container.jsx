@@ -88,7 +88,7 @@ const ImgContainer = styled.div`
 
 Container.defaultProps = {
   title: 'LG생활건강',
-  img: '/dd.jpg',
+  img: '/mt.jpg',
   subtitle: '화려한 애니매이션',
   href: '',
 };
