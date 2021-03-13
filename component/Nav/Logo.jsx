@@ -10,8 +10,11 @@ const Logo = ({ sticky }) => {
       <h1>
         <Link href='/'>
           <a>
-            <img src='/mus.png' className='class' alt='logo' />
-            <p>수염난친구들</p>
+            {sticky ? (
+              <img src='/logotext.png' className='class' alt='logo' />
+            ) : (
+              <img src='/white.png' className='class' alt='logo' />
+            )}
           </a>
         </Link>
       </h1>
@@ -24,10 +27,10 @@ export default Logo;
 const Container = styled.div`
   margin-top: -5px;
   .class {
-    width: 40px;
-
-    ${breakDown.tablet({ width: '40px' })}
-    ${breakDown.phone({ width: '30px', marginTop: 0 })}
+    width: 100px;
+    height: auto;
+    ${breakDown.tablet({ width: '100px' })}
+    ${breakDown.phone({ width: '70px', marginTop: 0 })}
   }
   p {
     color: ${({ sticky }) => (sticky ? 'black' : 'white')};
