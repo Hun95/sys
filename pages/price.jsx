@@ -1,4 +1,5 @@
 import React from 'react';
+import Head from 'next/head';
 import { usePriceContext } from '../context/PriceContext';
 import { breakDown } from '../global/Theme';
 import Layout from '../component/Layout';
@@ -18,6 +19,28 @@ const Price = () => {
   const { insure, insureChange } = usePriceContext();
   return (
     <Layout>
+      <Head>
+        <title>수염난친구들 : 가격정책</title>
+
+        <meta name='description' content='수염난친구들 가격정책입니다..' />
+        <meta name='keywords' content='가격정책' />
+
+        <meta property='og:title' content='수염난친구들 :가격정책' />
+
+        <meta property='og:site_name' content='' />
+        <meta
+          property='og:description'
+          content='수염난친구들 가격정책입니다..'
+        />
+
+        <meta name='twitter:title' content='수염난친구들 :가격정책' />
+        <meta
+          name='twitter:description'
+          content='수염난친구들 가격정책입니다..'
+        />
+
+        <meta name='twitter:card' content='summary' />
+      </Head>
       <PageHeader
         first='가격정책'
         second='저렴하게'

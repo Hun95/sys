@@ -13,7 +13,25 @@ export default function Home() {
     <>
       <Head>
         <title>수염난친구들 :메인</title>
-        <link rel='icon' href='/favicon.ico' />
+
+        <meta name='description' content='수염난친구들 메인페이지입니다.' />
+        <meta name='keywords' content='메인페이지' />
+
+        <meta property='og:title' content='수염난친구들 :메인' />
+
+        <meta property='og:site_name' content='' />
+        <meta
+          property='og:description'
+          content='수염난친구들 메인페이지입니다.'
+        />
+
+        <meta name='twitter:title' content='수염난친구들 :메인' />
+        <meta
+          name='twitter:description'
+          content='수염난친구들 메인페이지입니다.'
+        />
+
+        <meta name='twitter:card' content='summary' />
       </Head>
       <Layout>
         <VideoHero />
