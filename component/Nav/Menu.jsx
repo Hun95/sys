@@ -2,17 +2,18 @@ import React from 'react';
 import styled from 'styled-components';
 import { breakDown } from '../../global/Theme';
 import Link from 'next/link';
-import { NavLink, Router } from 'react-router-dom';
+import { useRouter } from 'next/router';
 const Menu = ({ open }) => {
+  const router = useRouter();
   return (
     <StyledMenu open={open}>
-      <Link active='.active' href='/project'>
+      <Link href='/project' replace>
         <a>다른 프로젝트</a>
       </Link>
-      <Link active='.active' href='/price'>
+      <Link href='/price'>
         <a>가격정책</a>
       </Link>
-      <Link active='.active' href='/photo'>
+      <Link href='/photo'>
         <a>
           사진관{' '}
           <span style={{ fontSize: '14px', letterSpacing: 0, color: 'red' }}>
@@ -20,7 +21,7 @@ const Menu = ({ open }) => {
           </span>
         </a>
       </Link>
-      <Link active='.active' href='/contact'>
+      <Link href='/contact'>
         <a>
           연락하기{' '}
           <span style={{ fontSize: '14px', letterSpacing: 0, color: 'red' }}>

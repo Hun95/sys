@@ -7,7 +7,7 @@ export const Global = createGlobalStyle`
         font-size:100%;
         box-sizing:border-box;
         -webkit-box-sizing : inherit;
-        scroll-behavior :smooth;
+      
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         

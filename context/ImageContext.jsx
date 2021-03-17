@@ -1,33 +1,45 @@
-import React, { useState, useContext, createContext, useEffect } from 'react';
+import React, {
+  useState,
+  useContext,
+  createContext,
+  useEffect,
+  useRef,
+} from 'react';
 
 const ImageContext = createContext();
 
 const ImageProvider = ({ children }) => {
+  const url = '/data/photo.json';
   const [loading, setLoading] = useState(false);
   const [nodata, setNodata] = useState(false);
   const [data, setData] = useState([]);
   const [first, setFirst] = useState([]);
   const [second, setSecond] = useState([]);
   const [third, setThird] = useState([]);
+  const viewport = useRef(null);
+  const target = useRef(null);
 
-  const url = '/data/photo.json';
   const fetchData = async () => {
     try {
       const res = await fetch(url);
 
       const resData = await res.json();
-      setFirst(resData.filter((datas) => datas.id % 3 === 0));
-      setSecond(resData.filter((datas) => datas.id % 3 === 1));
-      setThird(resData.filter((datas) => datas.id % 3 === 2));
+      console.log(resData);
+      setFirst(resData);
+
+      console.log(first);
+      // setFirst(resData.filter((datas) => datas.id % 3 === 0));
+      // setSecond(resData.filter((datas) => datas.id % 3 === 1));
+      // setThird(resData.filter((datas) => datas.id % 3 === 2));
     } catch (err) {
       console.log(err);
     }
   };
 
-  useEffect(() => {
-    fetchData();
-    console.log(first);
-  }, []);
+  // useEffect(() => {
+  //   fetchData();
+  //   console.log(first);
+  // }, []);
 
   return (
     <ImageContext.Provider
@@ -39,6 +51,8 @@ const ImageProvider = ({ children }) => {
         second,
         third,
         setFirst,
+        viewport,
+        target,
       }}
     >
       {children}

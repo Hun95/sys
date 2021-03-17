@@ -11,6 +11,7 @@ const Container = ({ first, second, third, img, theme }) => {
         <h2>{second}</h2>
         <h2>{third}</h2>
       </TextContainer>
+
       <Filter />
     </Back>
   );
@@ -23,6 +24,7 @@ const Back = styled.section`
   margin-top: -70px;
   background-repeat: no-repeat;
   background-size: cover;
+
   ${({ theme }) => {
     if (theme === 'price') {
       return css`
@@ -34,8 +36,8 @@ const Back = styled.section`
       `;
     }
   }}
-
-  height: 660px;
+  height: 550px;
+  background-color: #003d8d;
 `;
 
 const TextContainer = styled.div`

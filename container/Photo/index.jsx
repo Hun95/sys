@@ -4,53 +4,74 @@ import ImageBox from '../../component/ImageBox/ImageBox';
 import { useImageContext } from '../../context/ImageContext';
 import { breakDown } from '../../global/Theme';
 import styled from 'styled-components';
+import Loader from '../../component/Loading/Loading';
 const index = () => {
-  const { data, first, second, third, setFirst } = useImageContext();
+  const {
+    data,
+    first,
+    second,
+    third,
+    setFirst,
+    loading,
+    viewport,
+    target,
+  } = useImageContext();
 
   return (
-    <ImageContainer>
-      <PageHeader
-        first='사진'
-        second='찾아가는'
-        third='공간입니다.'
-        img='/tower.webp'
-      />
-      <TopGridContainer>
-        <SecondGridContainer>
-          {first.map((datas) => {
-            return (
-              <ImageBox
-                key={datas.id}
-                company={datas.company}
-                url={datas.url}
-              />
-            );
-          })}
-        </SecondGridContainer>
-        <SecondGridContainer>
-          {second.map((datas) => {
-            return (
-              <ImageBox
-                key={datas.id}
-                company={datas.company}
-                url={datas.url}
-              />
-            );
-          })}
-        </SecondGridContainer>
-        <SecondGridContainer>
-          {third.map((datas) => {
-            return (
-              <ImageBox
-                key={datas.id}
-                company={datas.company}
-                url={datas.url}
-              />
-            );
-          })}
-        </SecondGridContainer>
-      </TopGridContainer>
-    </ImageContainer>
+    <>
+      <ImageContainer>
+        <PageHeader
+          ref={viewport}
+          first='사진'
+          second='찾아가는'
+          third='공간입니다.'
+          img='/tower.webp'
+        />
+        <TopGridContainer>
+          {loading ? (
+            <Loader />
+          ) : (
+            <>
+              <SecondGridContainer>
+                {first.map((datas) => {
+                  const lastEl = datas.id === datas.length - 1;
+                  return (
+                    <ImageBox
+                      key={datas.id}
+                      company={datas.company}
+                      url={datas.url}
+                      ref={lastEl ? target : null}
+                    />
+                  );
+                })}
+              </SecondGridContainer>
+              {/* <SecondGridContainer>
+                {second.map((datas) => {
+                  return (
+                    <ImageBox
+                      key={datas.id}
+                      company={datas.company}
+                      url={datas.url}
+                    />
+                  );
+                })}
+              </SecondGridContainer>
+              <SecondGridContainer>
+                {third.map((datas) => {
+                  return (
+                    <ImageBox
+                      key={datas.id}
+                      company={datas.company}
+                      url={datas.url}
+                    />
+                  );
+                })}
+              </SecondGridContainer> */}
+            </>
+          )}
+        </TopGridContainer>
+      </ImageContainer>
+    </>
   );
 };
 

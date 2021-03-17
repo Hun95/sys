@@ -4,6 +4,7 @@ import { AppProvider } from '../context/context';
 import { PriceProvider } from '../context/PriceContext';
 import { ProjectProvider } from '../context/ProjectContext';
 import Head from 'next/head';
+import '../hooks/test.css';
 function MyApp({ Component, pageProps }) {
   return (
     <>
