@@ -1,2 +1,1 @@
-[홈페이지 주소](https://수염난친구들.com)
-
+[홈페이지 주소](https://beardfriends.vercel.app)

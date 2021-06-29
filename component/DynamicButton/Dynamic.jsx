@@ -1,21 +1,16 @@
-import React from 'react';
+import styled, { css } from 'styled-components';
+
 import Button from '../Button/Button';
 import Contact from './Contact';
-import styled, { css } from 'styled-components';
+import React from 'react';
 import { useMenuContext } from '../../context/MenuContext';
+
 const Dynamic = () => {
   const { isOpen, setIsOpen, anmOpen, setAnmOpen } = useMenuContext();
 
   return (
     <>
-      <Button
-        onClick={() => {
-          setAnmOpen('yes');
-          setIsOpen(!isOpen);
-        }}
-      >
-        수염난 친구와 연락하기
-      </Button>
+      <Button>수염난 친구와 연락하기</Button>
       <MobileNavModal open={anmOpen} />
       {isOpen && <Contact />}
     </>

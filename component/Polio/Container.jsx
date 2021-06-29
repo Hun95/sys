@@ -1,20 +1,16 @@
-import React from 'react';
-import styled from 'styled-components';
-
-import Dynamic from '../DynamicButton/Dynamic';
 import Button from '../Button/Button';
+import Dynamic from '../DynamicButton/Dynamic';
+import React from 'react';
 import { breakDown } from '../../global/Theme';
+import styled from 'styled-components';
 import { useMenuContext } from '../../context/MenuContext';
+
 const Container = () => {
   const { isMobile } = useMenuContext();
   return (
     <Section>
       <Dynamic />
-      {!isMobile && (
-        <Button href='https://hun95.github.io' target='__blank'>
-          더 신나는 웹사이트 체험하기
-        </Button>
-      )}
+      {!isMobile && <Button target='__blank'>더 신나는 웹사이트 체험하기</Button>}
     </Section>
   );
 };
