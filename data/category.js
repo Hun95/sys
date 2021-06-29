@@ -4,20 +4,20 @@ export const category = [
     category: '쇼핑몰',
     img: '/mt.jpg',
     title: 'MT Jewerly',
-    href: 'http://larvel09.godomall.com/',
+    href: 'http://onandoncoop.godomall.com/'
   },
   {
     id: 1,
     category: '인터렉티브',
     img: '/dynamic.jpg',
     title: 'Apple Product',
-    href: 'http://hun95.github.io/',
+    href: 'https://dazzling-yonath-10a015.netlify.app/'
   },
   {
     id: 2,
     category: '모듈',
     img: '/payment.jpg',
     title: 'Payment Example',
-    href: 'https://paytest.vercel.app/',
-  },
+    href: 'https://paytest.vercel.app/'
+  }
 ];
